@@ -1,0 +1,6 @@
+{
+  "name": "SC0v3: Coordinate Systems and Unit Vectors",
+  "description": "Start of transcript. Skip to the end.\nFor most of the problems we will be\nfacing in the next few weeks, we will only\nneed to work in two dimensions.\nWe use a 2D coordinate system so we can formally put vectors\non a grid and more easily do these vector operations.\nOnce we have our axes, the next thing we need are unit vectors.\nUnit vectors have a magnitude of 1\nand are in a defined direction.\nFor a normal x, y coordinate system,\nwe have i hat in the positive x direction and j hat\nin the positive y direction.\nIn Cartesian coordinates, the unit vectors\nare the same no matter what point in space we're at.\nWe can also define a unit vector in the direction\nof an arbitrary vector.\nThe key here is to make sure it has a magnitude of 1.\nEnd of transcript. Skip to the start",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

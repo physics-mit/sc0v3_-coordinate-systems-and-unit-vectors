@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+}
+
+header h1 {
+    color: #0056b3;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Controls and Explanation Section */
+#controls-explanation {
+    flex: 1;
+    min-width: 320px;
+    padding-right: 20px;
+    border-right: 1px solid #e0e0e0;
+}
+
+#controls-explanation h2, #visualization-section h2, footer h2 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.control-group h3, .details-box h3, .explanation-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.control-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #e9f5ff;
+    border-radius: 6px;
+    border: 1px solid #cce7ff;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-row label {
+    min-width: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.input-row input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+    transition: border-color 0.3s;
+}
+
+.input-row input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,123,255,0.25);
+}
+
+.details-box, .explanation-box {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.details-box p, .explanation-box ul {
+    margin: 5px 0;
+}
+
+.explanation-box ul {
+    padding-left: 20px;
+}
+.explanation-box ul li ul {
+    margin-top: 5px;
+}
+
+
+.error-message {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+/* Visualization Section */
+#visualization-section {
+    flex: 1.5; /* Give more space to canvas */
+    min-width: 500px; /* Ensure canvas has enough space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#vectorCanvas {
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    background-color: #fff;
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Footer - Example Cases */
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+#example-cases .case {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-left: 3px solid #007bff;
+    border-radius: 4px;
+}
+
+#example-cases .case p {
+    margin: 5px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+    #controls-explanation {
+        padding-right: 0;
+        border-right: none;
+        margin-bottom: 20px;
+    }
+    #visualization-section {
+      min-width: auto; /* Allow canvas to shrink more */
+    }
+    #vectorCanvas {
+      width: 100%; /* Make canvas responsive within its container */
+      max-width: 500px; /* But don't let it get too big if container is wide */
+      height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    .input-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .input-row label {
+        margin-bottom: 5px;
+    }
+    .input-row input[type="number"] {
+        width: 100%;
+    }
+}
