@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinate Systems and Unit Vector Simulator</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+  <script type="module" crossorigin src="/sc0v3_-coordinate-systems-and-unit-vectors/assets/index-CNo-cuBL.js"></script>
+  <link rel="stylesheet" crossorigin href="/sc0v3_-coordinate-systems-and-unit-vectors/assets/index-FfPc3Fl6.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Coordinate Systems and Unit Vector Simulator</h1>
+    </header>
+    <main>
+      <section id="controls-explanation" aria-labelledby="controls-heading">
+        <h2 id="controls-heading">Controls &amp; Theory</h2>
+        
+        <div class="control-group" role="group" aria-labelledby="define-vector-heading">
+          <h3 id="define-vector-heading">Define Arbitrary Vector A</h3>
+          <div class="input-row">
+            <label for="ax">A<sub>x</sub>:</label>
+            <input type="number" id="ax" value="3" step="0.1" aria-label="X-component of vector A">
+          </div>
+          <div class="input-row">
+            <label for="ay">A<sub>y</sub>:</label>
+            <input type="number" id="ay" value="4" step="0.1" aria-label="Y-component of vector A">
+          </div>
+        </div>
+
+        <div id="vector-a-details" class="details-box" aria-live="polite">
+          <h3>Vector A</h3>
+          <p>A = (<span id="display-ax">3</span>, <span id="display-ay">4</span>)</p>
+          <p>Magnitude |A| = <span id="display-mag-a">5</span></p>
+        </div>
+
+        <div id="unit-vector-ua-details" class="details-box" aria-live="polite">
+          <h3>Unit Vector u<sub>A</sub> (in direction of A)</h3>
+          <p>u<sub>A</sub> = (<span id="display-ux">0.600</span>, <span id="display-uy">0.800</span>)</p>
+          <p>Magnitude |u<sub>A</sub>| = <span id="display-mag-ua">1.000</span></p>
+          <p id="zero-vector-note" class="error-message" style="display:none;">Unit vector is undefined for a zero vector (magnitude is 0).</p>
+        </div>
+        
+        <div class="explanation-box">
+            <h3>Key Concepts (Based on Provided Text)</h3>
+            <ul>
+                <li><strong>2D Coordinate System:</strong> We use x and y axes to define positions and vectors on a plane ("grid"). This helps in performing vector operations systematically.</li>
+                <li><strong>Unit Vectors:</strong> These are vectors with a magnitude (length) of exactly 1. They specify a direction.
+                    <ul>
+                        <li><strong>i-hat (î):</strong> A unit vector in the positive x-direction. Components: (1, 0).</li>
+                        <li><strong>j-hat (ĵ):</strong> A unit vector in the positive y-direction. Components: (0, 1).</li>
+                        <li>In Cartesian coordinates, î and ĵ are constant regardless of the point in space.</li>
+                    </ul>
+                </li>
+                <li><strong>Unit Vector of an Arbitrary Vector (A):</strong> We can find a unit vector (u<sub>A</sub>) that points in the same direction as any non-zero vector A.
+                    <ul>
+                        <li>It's calculated by dividing vector A by its magnitude: u<sub>A</sub> = A / |A|.</li>
+                        <li>This means if A = (a<sub>x</sub>, a<sub>y</sub>), then u<sub>A</sub> = (a<sub>x</sub>/|A|, a<sub>y</sub>/|A|).</li>
+                        <li>The key is that the magnitude of u<sub>A</sub> will always be 1.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+      </section>
+
+      <section id="visualization-section" aria-labelledby="visualization-heading">
+        <h2 id="visualization-heading">Visualization</h2>
+        <canvas id="vectorCanvas" width="500" height="500" role="img" aria-label="Interactive visualization of vectors on a 2D coordinate system. Shows vector A, its unit vector uA, and standard unit vectors i-hat and j-hat."></canvas>
+      </section>
+    </main>
+
+    <footer>
+        <section id="example-cases" aria-labelledby="example-cases-heading">
+            <h2 id="example-cases-heading">Example Cases &amp; Solutions</h2>
+            <div class="case">
+                <p><strong>Case 1: Vector along positive X-axis</strong></p>
+                <p>If A = (4, 0): Then |A| = √(4² + 0²) = 4.</p>
+                <p>u<sub>A</sub> = (4/4, 0/4) = (1, 0). This is the unit vector î.</p>
+            </div>
+            <div class="case">
+                <p><strong>Case 2: Vector along positive Y-axis</strong></p>
+                <p>If A = (0, 3): Then |A| = √(0² + 3²) = 3.</p>
+                <p>u<sub>A</sub> = (0/3, 3/3) = (0, 1). This is the unit vector ĵ.</p>
+            </div>
+            <div class="case">
+                <p><strong>Case 3: Vector in a quadrant</strong></p>
+                <p>If A = (3, 4): Then |A| = √(3² + 4²) = √25 = 5.</p>
+                <p>u<sub>A</sub> = (3/5, 4/5) = (0.6, 0.8).</p>
+            </div>
+             <div class="case">
+                <p><strong>Case 4: Vector with negative components</strong></p>
+                <p>If A = (-2, -2): Then |A| = √((-2)² + (-2)²) = √8 ≈ 2.828.</p>
+                <p>u<sub>A</sub> = (-2/√8, -2/√8) ≈ (-0.707, -0.707).</p>
+            </div>
+            <div class="case">
+                <p><strong>Case 5: Zero Vector</strong></p>
+                <p>If A = (0, 0): Then |A| = 0.</p>
+                <p>The unit vector is undefined because calculating it would involve division by zero. The concept applies to non-zero vectors.</p>
+            </div>
+        </section>
+    </footer>
+  </div>
+</body>
+</html>
